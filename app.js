@@ -39,9 +39,11 @@
 // ========================== X ===============================
 // ========================      ================================
 
+let hour = 0;
 let min = 0;
 let sec = 0;
 let msec = 0;
+let htmlHour = document.getElementById("hour");
 let htmlMin = document.getElementById("min");
 let htmlSec = document.getElementById("sec");
 let htmlMsec = document.getElementById("msec");
@@ -60,6 +62,11 @@ function Start(){
             min++
             htmlMin.innerHTML = min
             sec = 0;
+        }else if(min >= 60){
+            hour++
+            htmlHour.innerHTML = hour;
+            min = 0;
+            
         }
     },10)
     document.getElementById("disable").disabled = true;
@@ -70,9 +77,11 @@ function Stop(){
     document.getElementById("disable").disabled = false;
 }
 function Reset(){
+    let hour = 0;
     let min = 0;
     let sec = 0;
     let msec = 0;
+    htmlHour.innerHTML = hour;
     htmlMin.innerHTML = min;
     htmlSec.innerHTML = sec;
     htmlMsec.innerHTML = msec;
