@@ -5,21 +5,20 @@
 // var secHeading = document.getElementById("sec"); 
 // var milisecHeading = document.getElementById("milisec"); 
 // var interval;
-// function timer(){
-//     milisec++
-//     milisecHeading.innerHTML = milisec;
-//     if(milisec >= 100){
-//         sec++
-//         secHeading.innerHTML = sec;
-//         milisec = 0;
-//     }else if(sec >= 60){
-//         min++
-//         minHeading.innerHTML = min;
-//         sec = 0;
-//     }
-// }
 // function start(){
-//     interval = setInterval(timer,10);
+//     interval = setInterval(() => {
+//         milisec++
+//         milisecHeading.innerHTML = milisec;
+//         if(milisec >= 100){
+//             sec++
+//             secHeading.innerHTML = sec;
+//             milisec = 0;
+//         }else if(sec >= 60){
+//             min++
+//             minHeading.innerHTML = min;
+//             sec = 0;
+//         }
+//     },10);
 // }
 // function pause(){
 //     clearInterval(interval);
@@ -77,6 +76,8 @@ function Stop(){
     document.getElementById("disable").disabled = false;
 }
 function Reset(){
+    document.getElementById("disable").disabled = false;
+    Stop();
     let hour = 0;
     let min = 0;
     let sec = 0;
@@ -85,8 +86,6 @@ function Reset(){
     htmlMin.innerHTML = min;
     htmlSec.innerHTML = sec;
     htmlMsec.innerHTML = msec;
-    document.getElementById("disable").disabled = false;
-    Stop();
 }
 
 
